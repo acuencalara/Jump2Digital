@@ -9,14 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Digits;
 
-@Entity
+@Entity (name="company")
 @Getter
 @Setter
 @ToString
 public class Company {
     @Id
     @Column(name = "id", nullable = false)
-    private Long id;
+    private String id;
     private String website;
     private String name;
     @Digits(integer = 4, fraction = 0)
@@ -29,7 +29,7 @@ public class Company {
     @Column(name="linkedin_url")
     private String linkedinUrl;
 
-    public Company(Long id, String website, String name, Integer founded, String size, String locality, String region, String country, String industry, String linkedinUrl) {
+    public Company(String id, String website, String name, Integer founded, String size, String locality, String region, String country, String industry, String linkedinUrl) {
         this.id = id;
         this.website = website;
         this.name = name;
@@ -43,6 +43,6 @@ public class Company {
     }
 
     public Company() {
-
     }
+
 }
