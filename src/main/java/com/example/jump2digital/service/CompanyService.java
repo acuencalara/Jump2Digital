@@ -25,9 +25,9 @@ public class CompanyService {
                 {
                     String sizeC1 = c1.getSize();
                     String sizeC2 = c2.getSize();
-                    String maxSizeC1 = sizeC1.split("-")[0];
+                    String maxSizeC1 = sizeC1.split("[-]|[+]")[0];
                     Integer intMaxSizeC1 = Integer.parseInt(maxSizeC1);
-                    String maxSizeC2 = sizeC2.split("-")[0];
+                    String maxSizeC2 = sizeC2.split("[-]|[+]")[0];
                     Integer intMaxSizeC2 = Integer.parseInt(maxSizeC2);
                     return intMaxSizeC1.compareTo(intMaxSizeC2);
                 };

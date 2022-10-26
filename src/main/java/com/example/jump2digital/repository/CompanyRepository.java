@@ -10,9 +10,6 @@ import java.util.List;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, String> {
-    @Query()
-    List<Company> findByOrderBySizeAsc();
-
 
 }
 
