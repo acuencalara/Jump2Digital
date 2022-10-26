@@ -6,10 +6,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.JpaSort;
+import org.springframework.data.util.Predicates;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -32,10 +34,13 @@ public class CompanyService {
                     return intMaxSizeC1.compareTo(intMaxSizeC2);
                 };
 
-
-
         List<Company> companyList = companyRepository.findAll().stream().sorted(bySize).toList();
 
+        return companyList;
+    }
+
+    public List<Company> findByOrderByFoundedAsc(){
+        List<Company> companyList = companyRepository.findByOrderByFoundedAsc();
         return companyList;
     }
 }

@@ -10,6 +10,11 @@ import java.util.List;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, String> {
+    @Query("select c from company c order by c.founded")
+    List<Company> findByOrderByFoundedAsc();
+
+
+
 
 }
 

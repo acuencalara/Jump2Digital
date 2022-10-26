@@ -20,4 +20,9 @@ public class CompanyController {
     public List<Company> findByOrderBySizeAsc(){
         return companyService.findByOrderBySizeAsc();
     }
+
+    @GetMapping("/companies/year/")
+    public List<Company> findByOrderByFoundedAsc(){
+        return companyService.findByOrderByFoundedAsc();
+    }
 }
