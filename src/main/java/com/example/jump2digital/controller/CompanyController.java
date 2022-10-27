@@ -25,4 +25,6 @@ public class CompanyController {
     public List<Company> findByOrderByFoundedAsc(){
         return companyService.findByOrderByFoundedAsc();
     }
+
+
 }

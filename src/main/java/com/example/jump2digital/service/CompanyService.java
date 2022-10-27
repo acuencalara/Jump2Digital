@@ -3,6 +3,7 @@ package com.example.jump2digital.service;
 import com.example.jump2digital.model.Company;
 import com.example.jump2digital.repository.CompanyRepository;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.JpaSort;
