@@ -13,6 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CompanyController {
 
+
     @Autowired
     private CompanyService companyService;
 
@@ -26,13 +27,18 @@ public class CompanyController {
         return companyService.findByOrderByFoundedAsc();
     }
 
-//    @GetMapping("/companies/industry/")
-//    public String getNumCompaniesByIndustry(){
-//        return companyService.getNumCompaniesByIndustry();
-//    }
-
-    @GetMapping("/companies/sum/")
+    @GetMapping("/companies/companiesbyindustry/")
     public List<Object[]> findNumberCompaniesInEachIndustry(){
         return companyService.findNumberCompaniesInEachIndustry();
+    }
+
+    @GetMapping("/companies/companiesbysize/")
+    public List<Object[]> findNumberCompaniesBySize(){
+        return companyService.findNumberCompaniesBySize();
+    }
+
+    @GetMapping("/companies/companiesbyyear/")
+    public List<Object[]> findNumberCompaniesByFoundedYear(){
+        return companyService.findNumberCompaniesByFoundedYear();
     }
 }

@@ -46,4 +46,12 @@ public class CompanyService {
     public List<Object[]> findNumberCompaniesInEachIndustry(){
         return companyRepository.findNumberCompaniesInEachIndustry();
     }
+
+    public List<Object[]> findNumberCompaniesBySize(){
+        return companyRepository.findNumberCompaniesBySize();
+    }
+
+    public List<Object[]> findNumberCompaniesByFoundedYear(){
+        return companyRepository.findNumberCompaniesByFoundedYear();
+    }
 }

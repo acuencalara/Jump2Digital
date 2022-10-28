@@ -21,7 +21,11 @@ public interface CompanyRepository extends JpaRepository<Company, String> {
     @Query(value = "SELECT COUNT(id), industry FROM jump2digital.company GROUP BY industry ORDER BY COUNT(id)",nativeQuery = true)
     List<Object[]> findNumberCompaniesInEachIndustry();
 
-    @Query()
+    @Query(value = "SELECT COUNT(id), size FROM jump2digital.company GROUP BY size ORDER BY COUNT(id)",nativeQuery = true)
+    List<Object[]> findNumberCompaniesBySize();
+
+    @Query(value = "SELECT COUNT(id), founded FROM jump2digital.company GROUP BY founded ORDER BY COUNT(id)",nativeQuery = true)
+    List<Object[]> findNumberCompaniesByFoundedYear();
 
 
     @Query("select count(c) from company c where c.industry = ?1")
