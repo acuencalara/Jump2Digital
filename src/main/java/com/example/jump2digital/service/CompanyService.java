@@ -10,9 +10,7 @@ import org.springframework.data.jpa.domain.JpaSort;
 import org.springframework.data.util.Predicates;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +22,7 @@ public class CompanyService {
     public List<Company> findByOrderBySizeAsc() {
 
         Comparator<Company> bySize =
-                (Company c1, Company c2)->
+                (Company c1, Company c2) ->
                 {
                     String sizeC1 = c1.getSize();
                     String sizeC2 = c2.getSize();
@@ -40,8 +38,12 @@ public class CompanyService {
         return companyList;
     }
 
-    public List<Company> findByOrderByFoundedAsc(){
+    public List<Company> findByOrderByFoundedAsc() {
         List<Company> companyList = companyRepository.findByOrderByFoundedAsc();
         return companyList;
+    }
+
+    public List<Object[]> findNumberCompaniesInEachIndustry(){
+        return companyRepository.findNumberCompaniesInEachIndustry();
     }
 }

@@ -1,3 +1,4 @@
-SELECT COUNT(id), locality
+SELECT COUNT(id), industry
 FROM jump2digital.company
-GROUP BY locality;
+GROUP BY industry
+ORDER BY COUNT(id);

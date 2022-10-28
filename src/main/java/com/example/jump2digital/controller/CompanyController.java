@@ -26,5 +26,13 @@ public class CompanyController {
         return companyService.findByOrderByFoundedAsc();
     }
 
+//    @GetMapping("/companies/industry/")
+//    public String getNumCompaniesByIndustry(){
+//        return companyService.getNumCompaniesByIndustry();
+//    }
 
+    @GetMapping("/companies/sum/")
+    public List<Object[]> findNumberCompaniesInEachIndustry(){
+        return companyService.findNumberCompaniesInEachIndustry();
+    }
 }
