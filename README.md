@@ -14,6 +14,8 @@ El proyecto se ha realizado con:
   - Java
   - Spring
   - MySQL
+  - Postman
+
  
 # Funcionamiento
 Se han creado 5 endpoints diferentes:
